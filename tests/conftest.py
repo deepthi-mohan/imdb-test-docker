@@ -8,13 +8,13 @@ import pytest
 """ Initialize drivers"""""
 
 
-@pytest.fixture(params=["firefox"], scope='function')
+@pytest.fixture(params=["chrome"], scope='function')
 # @pytest.fixture(params=["chrome", "firefox"], scope='function')
 def init_driver(request):
     if request.param == "chrome":
-        web_driver = webdriver.Chrome(ChromeDriverManager().install())
-    if request.param == "firefox":
-        web_driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+        web_driver = webdriver.Chrome(executable_path="./drivers/chromedriver.exe")
+    # if request.param == "firefox":
+    #     web_driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
     if request.param == "internet explorer":
         web_driver = webdriver.Ie(IEDriverManager().install())
 
