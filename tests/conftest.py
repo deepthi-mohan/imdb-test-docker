@@ -8,7 +8,7 @@ import pytest
 """ Initialize drivers"""""
 
 
-@pytest.fixture(params=["chrome"], scope='function')
+@pytest.fixture(params=["firefox"], scope='function')
 # @pytest.fixture(params=["chrome", "firefox"], scope='function')
 def init_driver(request):
     if request.param == "chrome":
